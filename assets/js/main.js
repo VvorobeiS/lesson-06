@@ -1,7 +1,7 @@
 'use strict';
 
 const guessNumber = function () {
-  let randomNum = parseInt(Math.random() * 100);
+  let randomNum = parseInt(Math.random() * 101);
   let userNum = prompt('Угадай число от 1 до 100');
   let attempts = 10;
   attempts--;
@@ -19,11 +19,11 @@ const guessNumber = function () {
     } else if (userNum === null) {
       alert('Игра окончена.');
     } else if (userNum < randomNum && attempts > 0) {
-      userNum = prompt(`Загаданное число меньше, у вас осталось ${attempts} попыток`);
+      userNum = prompt(`Загаданное число больше, у вас осталось ${attempts} попыток`);
       attempts--;
       return startGame();
     } else if (userNum > randomNum && attempts > 0) {
-      userNum = prompt(`Загаданное число больше, у вас осталось ${attempts} попыток`);
+      userNum = prompt(`Загаданное число меньше, у вас осталось ${attempts} попыток`);
       attempts--;
       return startGame();
     } else if (isNaN(userNum)) {
